@@ -1,0 +1,55 @@
+Day1: Agenda
+============
+What is Linux > Linux is an Operating system.
+
+Labsetup
+Windows> GUI
+Linux> CLI
+
+
+In Linux all the things are file/folder
+
+file: It's a data
+Folder: It's a container in which we can have multiple file(s)
+
+
+How to create file
+How to create folder
+
+How to create file> touch filename
+How to create folder> mkdir foldername
+How to delete a file? > rm <filename>
+How to delete a folder? rmdir foldername
+How to change directory > cd
+How to print the path > pwd[print working directory]
+How to clear the screen > clear
+How to print hello world in Linux > echo "Hello-world"
+I want to print date > date
+I want to rename the directory > mv name newname
+I want to take backup/cop of directory > cp -r Umesh Umesh_bkp # -r recursive
+I want to know containt of my directory > ls [list]
+
+
+We have only 2 thing- 1) file , 2) folder
+How to identify a directory/file
+directory > / [would be in the last]
+
+I want to create folder with name Umesh, and inside Umesh, I want to create file call umesh.txt
+
+Desktop
+=======
+>>> mkdir umesh
+>>> cd umesh #cd > changing directory 
+>>> touch umesh.txt
+
+pwd: print working directory
+Directory> folder in window's referred as directory in linux
+
+ubuntu $ ls -lrt
+total 16
+lrwxrwxrwx 1 root root    1 Aug  2 07:17 filesystem -> /
+drwx------ 3 root root 4096 Aug  6 16:11 snap
+drwxr-xr-x 2 root root 4096 Aug  6 16:31 umesh01
+drwxr-xr-x 2 root root 4096 Aug  6 16:31 umesh
+drwxr-xr-x 2 root root 4096 Aug  6 16:53 Rajesh
+-rw-r--r-- 1 root root    0 Aug  6 16:53 umesh.txt
