@@ -1,0 +1,30 @@
+vi editor
+Basic Modes
+•	Normal Mode: Default mode for navigation and command operations. Press Esc to return to this mode.
+•	Insert Mode: For inserting text. Enter by pressing i
+ 
+
+Switching Modes
+•	Normal Mode: Press Esc to return to normal mode.
+•	Insert Mode: Press i (insert at cursor), a (append after cursor), or o (open a new line below) from normal mode.
+Basic Commands
+•	Saving and Quitting:
+o	:w – Save the file.
+o	:q – Quit vi.
+o	:wq or ZZ – Save and quit.
+o	:q! – Quit without saving.
+1) touch filename [Optinal]
+2) Open the file into insert mode > vi <filename>  Enter-key, then press i
+3) write containt like notepad
+4) Once you are done with editing press esc key
+5) to save :wq then press Enter-key
+
+Note: Below commands are covered in today’s session
+•	Directory Navigation
+•	Disk Usage
+•	File Compression
+•	Hardware Information
+
+ 
+ChatGPT: https://chatgpt.com/ 
+Azure ChatGPT: https://www.azurespeed.com/Azure/Latency
