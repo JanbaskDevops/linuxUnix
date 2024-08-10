@@ -1,0 +1,70 @@
+Using if-else in a shell script allows you to execute different code based on conditions. Here’s a basic guide:
+
+### Syntax
+
+bash
+if [ condition ]; then
+    # commands to execute if condition is true
+elif [ another_condition ]; then
+    # commands to execute if another_condition is true
+else
+    # commands to execute if none of the above conditions are true
+fi
+
+
+### Example 1: Simple Comparison
+
+bash
+#!/bin/bash
+
+number=10
+
+if [ $number -gt 5 ]; then
+    echo "The number is greater than 5."
+else
+    echo "The number is 5 or less."
+fi
+
+
+### Example 2: Checking File Existence
+
+bash
+#!/bin/bash
+
+filename="example.txt"
+
+if [ -e $filename ]; then
+    echo "File $filename exists."
+else
+    echo "File $filename does not exist."
+fi
+
+
+### Example 3: Multiple Conditions (elif)
+
+bash
+#!/bin/bash
+
+number=10
+
+if [ $number -gt 15 ]; then
+    echo "The number is greater than 15."
+elif [ $number -gt 5 ]; then
+    echo "The number is greater than 5 but 15 or less."
+else
+    echo "The number is 5 or less."
+fi
+
+
+### Common Conditions
+
+- *String comparison*: [ "$a" = "$b" ] or [ "$a" != "$b" ]
+- *Numeric comparison*: [ $a -eq $b ], [ $a -ne $b ], [ $a -lt $b ], [ $a -le $b ], [ $a -gt $b ], [ $a -ge $b ]
+- *File checks*: [ -e file ] (exists), [ -d directory ] (is a directory), [ -f file ] (is a file)
+
+### Notes
+- *fi* ends the if block.
+- *elif* allows you to check additional conditions.
+- *else* is optional and runs if none of the previous conditions are true.
+
+This structure can be extended with nested if statements or complex conditions using logical operators like && (AND) and || (OR).
