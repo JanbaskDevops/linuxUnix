@@ -1,0 +1,91 @@
+Loops in shell scripts allow you to repeat a set of commands multiple times. There are several types of loops available in shell scripting, including for, while, and until loops.
+
+### 1. *For Loop*
+
+The for loop iterates over a list of items and performs a set of commands for each item.
+
+#### Example: Iterating over a list of numbers
+
+bash
+#!/bin/bash
+
+for i in 1 2 3 4 5; do
+    echo "Iteration $i"
+done
+
+
+#### Example: Iterating over files in a directory
+
+bash
+#!/bin/bash
+
+for file in /path/to/directory/*; do
+    echo "Processing $file"
+done
+
+
+### 2. *While Loop*
+
+The while loop continues to execute commands as long as the specified condition is true.
+
+#### Example: Counting down from 5
+
+bash
+#!/bin/bash
+
+count=5
+
+while [ $count -gt 0 ]; do
+    echo "Countdown: $count"
+    count=$((count - 1))
+done
+
+echo "Blast off!"
+
+
+### 3. *Until Loop*
+
+The until loop is similar to the while loop but continues to execute commands as long as the specified condition is false.
+
+#### Example: Counting up to 5
+
+bash
+#!/bin/bash
+
+count=1
+
+until [ $count -gt 5 ]; do
+    echo "Count: $count"
+    count=$((count + 1))
+done
+
+
+### 4. *Nested Loops*
+
+You can also nest loops within each other. This is useful for iterating over multi-dimensional data.
+
+#### Example: Nested for loop
+
+bash
+#!/bin/bash
+
+for i in 1 2 3; do
+    for j in a b c; do
+        echo "Outer loop: $i, Inner loop: $j"
+    done
+done
+
+
+### 5. *Loop Control*
+
+- *break*: Exits the loop immediately.
+- *continue*: Skips the rest of the current loop iteration and moves to the next iteration.
+
+#### Example: Using break and continue
+
+```bash
+#!/bin/bash
+
+for i in 1 2 3 4 5; do
+    if [ $i -eq 3 ]; then
+        continue  # Skip iteration when i is 3
