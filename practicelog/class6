@@ -1,0 +1,167 @@
+How to give Linux script name >> 
+
+<Functionality| all small><purpose > first letter capital remining smaill>
+
+Camel case writing
+
+startServer.sh
+stopServer.sh
+installJenkins.sh
+
+I want to install jenkins
+=========================
+
+I want to write jenkins installation script which should check below 3 condtions
+RAM should be 4GB 
+Disk space should be 50 GB
+java17 should be installed
+
+If these condtions are passed then below installion steps should be execuited
+
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+
+if-else
+
+```bash
+#!/bin/bash
+
+# Check for RAM >= 4GB
+ram_check=$(free -g | awk '/^Mem:/{print $2}')
+if [ "$ram_check" -lt 4 ]; then
+    echo "Insufficient RAM. 4GB required."
+    exit 1
+fi
+
+# Check for Disk space >= 50GB
+disk_check=$(df / --output=avail -BG | tail -n 1 | tr -d 'BG ')
+if [ "$disk_check" -lt 50 ]; then
+    echo "Insufficient disk space. 50GB required."
+    exit 1
+fi
+
+# Check for Java 17
+if ! java -version 2>&1 | grep -q 'version "17'; then
+    echo "Java 17 is not installed."
+    exit 1
+fi
+
+# If all conditions pass, run Jenkins installation steps
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/" | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install jenkins
+
+
+As a Linux Engineer I want you to install terraform
+
+installTerraform.sh
+
+terraformInstall.sh
+
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+
+
+1) awk, 2) shell script and 3) roadmap to enhance skill on Linux and Unix.
+
+
+create table table-name{cplumnname} size 
+
+createDatabase.sh
+
+create table $1 $2 $3
+
+
+create table $1
+
+
+
+
+
+I want to install nginx, docker, java via shell script
+
+DockerJavaNginxInstall.sh
+
+tools = [docker.io, nginx, java]
+for tools in tool
+  apt-get update
+  apt install tool -y
+
+
+I want to install docker.io, nginx and java by package manager and for loop
+
+
+
+
+
+
+for ubuntu
+==========
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+
+
+for centos
+==========
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+sudo yum -y install terraform
+
+
+for Fedora
+==========
+sudo dnf install -y dnf-plugins-core
+sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+sudo dnf -y install terraform
+
+for Amazon Linux
+=================
+sudo yum install -y yum-utils shadow-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+sudo yum -y install terraform
+
+Howbrew
+=======
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+
+how to check operating system
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
